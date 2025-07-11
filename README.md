@@ -1,5 +1,5 @@
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/nfa-vfxim/tk-houdini-cachenode?include_prereleases)](https://github.com/nfa-vfxim/tk-houdini-cachenode) 
-[![GitHub issues](https://img.shields.io/github/issues/nfa-vfxim/tk-houdini-cachenode)](https://github.com/nfa-vfxim/tk-houdini-cachenode/issues) 
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/planetx-vfx/tk-houdini-cachenode?include_prereleases)](https://github.com/planetx-vfx/tk-houdini-cachenode) 
+[![GitHub issues](https://img.shields.io/github/issues/planetx-vfx/tk-houdini-cachenode)](https://github.com/planetx-vfx/tk-houdini-cachenode/issues) 
 
 
 # File Cache Node
@@ -36,12 +36,21 @@ If you'd still like to manually install the app, the following dependencies need
 
 ## Configuration
 
+### Strings
+
+| Name                | Description                                                                                                                             | Default value |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `default_node_name` | A default name for cache output nodes created in houdini. Allowed characters include letters, numbers, periods, dashes, or underscores. | sgtk_cache    |
+
+
 ### Templates
 
-| Name                      | Description                                                                                                                                     | Default value | Fields                    |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------------------------|
-| `work_file_template`      | A reference to a template which locates a Houdini work file on disk. This is used to drive the version and optionally the name of output files. |               | context, version, [name]  |
-| `output_cache_template`   | A reference to a template which defines where the bgeo cache will be written to disk.                                                           |               | context, version, name, * |
-| `output_publish_template` | A reference to a template which defines where the published bgeo cache will be copied to.                                                       |               | context, version, name, * |
+| Name                               | Description                                                                                                                                     | Default value | Fields                         |
+|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|---------------|--------------------------------|
+| `work_file_template`               | A reference to a template which locates a Houdini work file on disk. This is used to drive the version and optionally the name of output files. |               | context, version, [name]       |
+| `output_cache_template`            | A reference to a template which defines where the bgeo cache will be written to disk.                                                           |               | context, version, name, *      |
+| `output_publish_template`          | A reference to a template which defines where the published bgeo cache will be copied to.                                                       |               | context, version, name, *      |
+| `output_cache_sequence_template`   | A reference to a template which defines where the sequence bgeo cache will be written to disk.                                                  |               | context, version, name, SEQ, * |
+| `output_publish_sequence_template` | A reference to a template which defines where the published sequence bgeo cache will be copied to.                                              |               | context, version, name, SEQ, * |
 
 

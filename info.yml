@@ -1,4 +1,11 @@
 configuration:
+    default_node_name:
+        type: str
+        description: >
+            A default name for cache output nodes created in houdini.
+            Allowed characters include letters, numbers, periods, dashes, or
+            underscores.
+        default_value: sgtk_cache
 
     work_file_template:
         type: template
@@ -21,6 +28,20 @@ configuration:
             A reference to a template which defines where the published
             bgeo cache will be copied to.
         fields: context, version, name, *
+
+    output_cache_sequence_template:
+        type: template
+        description: >
+            A reference to a template which defines where the
+            sequence bgeo cache will be written to disk.
+        fields: context, version, name, SEQ, *
+
+    output_publish_sequence_template:
+        type: template
+        description: >
+            A reference to a template which defines where the published
+            sequence bgeo cache will be copied to.
+        fields: context, version, name, SEQ, *
 
 
 requires_shotgun_fields:
